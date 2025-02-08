@@ -5,7 +5,7 @@
 Ce projet implémente un malware utilisant **LD_PRELOAD** pour intercepter les credentials (nom d'utilisateur/mot de passe) envoyés par les clients à un serveur **OpenSSH**.
 
 Le malware fonctionne en mode **assumed breach** avec deux approches :
-- **Avec les droits root** (sans mitigation)
+- **Avec les droits root** 
 - **Avec des privilèges réduits** (infection en tant qu'utilisateur non root)
 
 Le projet inclut également un serveur **Command & Control (C2)** permettant :
