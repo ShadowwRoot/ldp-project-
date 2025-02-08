@@ -70,14 +70,15 @@ nc 127.0.0.1 8000
 nc 127.0.0.1 8001
 nc 127.0.0.1 8002
 ```
-
-### **5. Démarrage automatique du serveur C2**
-
-Après la séquence correcte, le serveur C2 démarre automatiquement :
+### **5. lancement du Port Knocking  
 
 ```bash
 ./port_knocking
 ```
+
+### **5. Démarrage automatique du serveur C2**
+
+Après la séquence correcte, le serveur C2 démarre automatiquement :
 
 Sortie attendue :
 
