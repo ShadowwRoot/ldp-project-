@@ -134,5 +134,5 @@ Sortie attendue :
 
 ## **Conclusion**
 
-Ce projet démontre comment `LD_PRELOAD` peut être exploité pour intercepter des credentials SSH tout en mettant en place des mécanismes d’évasion et de furtivité. Il intègre un serveur de commande et contrôle permettant de récupérer les informations de manière sécurisée. 🚀
+Ce projet démontre comment `LD_PRELOAD` peut être exploité pour intercepter des credentials SSH tout en mettant en place des mécanismes d’évasion et de furtivité. Il intègre un serveur de commande et contrôle permettant de récupérer les informations de manière sécurisée. 
 
