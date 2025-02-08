@@ -25,7 +25,7 @@ Le malware utilise **LD_PRELOAD** pour détourner les appels système `read()` e
 ### **2. Furtivité & Évasion**
 
 Le malware implémente plusieurs techniques d’évasion :
-- **Obfuscation des connexions réseau** : Cachage des connexions ouvertes de `netstat` et `ss`.
+- **Obfuscation des connexions réseau** : Cacher les connexions ouvertes de `netstat` et `ss`.
 - **Suppression des logs** : Effacement des traces locales pour limiter la détection.
 
 ### **3. Port Knocking**
