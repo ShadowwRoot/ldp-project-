@@ -147,13 +147,6 @@ sudo LD_PRELOAD=$(pwd)/hook.so /usr/sbin/sshd -D
 
 ---
 
-## **Améliorations Possibles**
-
-- **Spoofing réseau** : Modifier les requêtes envoyées aux logs distants.
-- **Chiffrement des communications C2** : Ajouter TLS pour éviter la détection.
-- **Extension multi-plateforme** : Adapter le malware pour fonctionner sur différents OS.
-
----
 
 ## **Conclusion**
 
