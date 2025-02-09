@@ -70,7 +70,9 @@ ssh -i private_key.pem testuser@localhost
 
 exécuter la séquence de knocking : 
 ```bash
- nc 127.0.0.1 8000 nc 127.0.0.1 8001 nc 127.0.0.1 8002
+ nc 127.0.0.1 8000
+ nc 127.0.0.1 8001
+ nc 127.0.0.1 8002
  ```
 
 ### **5. Démarrage automatique du serveur C2**
