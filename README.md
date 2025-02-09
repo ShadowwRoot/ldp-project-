@@ -96,6 +96,7 @@ Sortie attendue :
 Lorsqu'un utilisateur se connecte à un serveur SSH infecté, le malware intercepte ses informations et les envoie au serveur C2. 
 
 Voici un exemple de sortie lors de la capture d'une clé privée SSH :
+
  Sur la machine victime (serveur SSH infecté) :
 
 ```bash
