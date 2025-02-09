@@ -126,6 +126,8 @@ sudo LD_PRELOAD=$(pwd)/hook.so /usr/sbin/sshd -D
 - Tester `netstat -tulnp | grep 5555` et `ss -tulnp | grep 5555`.
 - Vérifier que le port du serveur C2 n'est pas visible.
 
+Le hook fonctionne bien sur certains outils, mais ss et netstat utilisent /proc pour afficher les connexions, ce qui nécessite un hook plus avancé.
+
 ### **3. Port Knocking**
 
 - Avant d'exécuter la séquence de knocking, le port C2 **ne doit pas être visible**.
