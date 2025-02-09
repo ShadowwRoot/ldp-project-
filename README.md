@@ -38,6 +38,8 @@ Le serveur C2 est responsable de :
 - Recevoir les informations des hôtes infectés
 - Stocker les credentials volés
 - Accepter des commandes pour exécuter des actions sur la machine infectée
+- Enregistrer les hôtes infectés.
+
 
 ---
 
