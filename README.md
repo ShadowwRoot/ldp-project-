@@ -1,4 +1,4 @@
-# **Projet LD_PRELOAD Malware**  ** FARSSI SAMY 3SI **
+# **Projet LD_PRELOAD Malware**  **FARSSI SAMY 3SI**
 
 ## **Introduction**
 
