@@ -1,4 +1,7 @@
-# **Projet LD_PRELOAD Malware** -- **SAMY 3SI**
+# **Projet LD_PRELOAD Malware** 
+
+credit:
+--**Shadowroot **
 
 ## **Introduction**
 
