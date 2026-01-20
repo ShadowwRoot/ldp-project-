@@ -3,7 +3,13 @@
 ## ✍️ Auteurs
 -- ** ShadowRoot **
 
+
+⚠️ Avertissement
+Cet outil est à utiliser uniquement dans un cadre légal et éthique (tests locaux, lab perso, CTF, autorisation explicite).
+
 ## **Introduction**
+
+Projet effectué dans le cadre de ma Licence en Cybersécurité
 
 Ce projet implémente un malware utilisant **LD_PRELOAD** pour intercepter les credentials (nom d'utilisateur/mot de passe) envoyés par les clients à un serveur **OpenSSH**.
 
